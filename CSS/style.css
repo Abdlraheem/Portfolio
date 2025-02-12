@@ -195,23 +195,42 @@ nav .toggle__menu {
 .about__me {
   width: 100%;
   padding: 78px 0px;
-  background-color: var(--ligt-brown-color);
+  background-image: linear-gradient(-360deg, #171719, #ea865f, #8b4b2f11);
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main {
-  width: var(--max-width);
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 100px;
 }
 .about__me img {
   height: auto;
   width: 700px;
 }
-.about__text {
-  background-clip: text;
-  background-image: linear-gradient(90deg, red, blue);
+
+.about__me .section__title {
+  font-size: 51px;
+  text-transform: capitalize;
+  color: white;
+}
+.about__me h5 {
+  color: white;
+  font-size: 27px;
+  font-weight: normal;
+}
+.about__me h5 span {
+  color: var(--dark-color);
+  font-weight: 700;
+}
+.about__me p {
+  width: 528px;
+  color: white;
+  font-size: 25px;
 }
 
 /*------------END  section about me---------*/
