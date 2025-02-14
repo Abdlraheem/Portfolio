@@ -2,7 +2,6 @@ const scrollRevealOption = {
     distance: "90px",
     origin: "bottom",
     duration: 600,
- 
 };
 ScrollReveal().reveal(".section__container h3",{
 ...scrollRevealOption ,
@@ -11,8 +10,7 @@ ScrollReveal().reveal(".section__container h3",{
 ScrollReveal().reveal(".section__container h1",{
     ...scrollRevealOption ,
     origin: "bottom",
-   
- 
+
     });
     ScrollReveal().reveal(".section__container h2",{
         ...scrollRevealOption ,
@@ -29,8 +27,6 @@ ScrollReveal().reveal(".section__container h1",{
       
         });
   
-     
-     
                 ScrollReveal().reveal(".section__container button span",{
                     ...scrollRevealOption ,
                     origin: "left",
