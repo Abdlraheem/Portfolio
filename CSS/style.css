@@ -11,7 +11,9 @@
   --white: #ffff;
   --max-width: 1200px;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* ------ FONTS POPPINS ---------*/
 
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -31,6 +33,7 @@ body {
   overflow: hidden;
   position: relative;
 }
+
 .background__landing .main-img {
   position: absolute;
   width: 36%;
@@ -80,6 +83,7 @@ nav .toggle__menu {
 .nav__links img {
   width: 100%;
 }
+
 .nav__links a {
   position: relative;
   isolation: isolate;
@@ -192,6 +196,15 @@ nav .toggle__menu {
 
 /*------------START section about me--------*/
 
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+
+  max-width: var(--max-width);
+  position: relative;
+}
 .about__me {
   width: 100%;
   padding: 78px 0px;
@@ -200,17 +213,13 @@ nav .toggle__menu {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  height: 100vh;
 }
-.main {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 100px;
-}
+
 .about__me img {
   height: auto;
-  width: 700px;
+  width: 43%;
 }
 
 .about__me .section__title {
@@ -227,10 +236,64 @@ nav .toggle__menu {
   color: var(--dark-color);
   font-weight: 700;
 }
-.about__me p {
-  width: 528px;
+.skill__pro {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.skill__pro .circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.skill__pro .circle::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background-color: #171719;
+  opacity: 0.8;
+}
+.skill__pro .circle::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: #171719;
+  border: 15px solid #4d4c51;
+  border-radius: 50%;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.75), 0 -2px 2px rgba(255, 255, 255, 0.5),
+    inset 0 4px 2px rgba(0, 0, 0, 0.25),
+    inset 0 -2px 2px rgba(255, 255, 255, 0.5);
+}
+.skill__pro .circle .number {
+  position: relative;
   color: white;
-  font-size: 25px;
+  z-index: 10;
+  line-height: 1em;
+  font-size: 2em;
+}
+.skill__pro .circle .number span {
+  font-size: 0.5em;
+  font-weight: 500;
+}
+.skill__pro .circle h4 {
+  position: relative;
+  color: white;
+  z-index: 10;
+  font-weight: 500;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  line-height: 0.6em;
 }
 
 /*------------END  section about me---------*/
