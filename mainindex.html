@@ -15,25 +15,28 @@
     <!-- WEBSITE TITLE NAME -->
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="mainstyles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
     <!--==================== Start header ======================-->
-    <header class="header">
+
+
+    <header class="header  ">
         <!-- ----START NAV BAR---- -->
         <nav class="whole-nav">
             <a href="#" class="logo"><img src="images/white logo.png" alt="brand"></a>
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="">Get to know me</a></li>
-                    <li class="nav-item"><a href="">Works</a></li>
-                    <li class="nav-item"><a href="">Goals</a></li>
-                    <li class="nav-item"><a href="">Contact Me</a></li>
+                    <li class="nav-item"><a href="#">Get to know me</a></li>
+                    <li class="nav-item"><a href="#">Works</a></li>
+                    <li class="nav-item"><a href="#">Goals</a></li>
+                    <li class="nav-item"><a href="#">Contact Me</a></li>
                 </ul>
                 <!-- -------CLOSE TOGGLE BUTTON------ -->
                 <div class="nav-colse-btn" id="nav-colse-btn">
-                    <i class="ri-close-large-line"></i>
+                    <i class="ri-eye-line"></i>
                 </div>
                 <!-- ----------SOCIAL LINKS-------- -->
                 <div class="nav-social-links">
@@ -43,14 +46,39 @@
                 </div>
             </div>
             <!-- ------RESPONSIVE TOGGLE BUTTON----- -->
-            <div class="nav-toggle-btn" id="nav-toggle-btn">
-                <a href="#"><i class="ri-menu-line"></i></a>
+            <div>
+                <a href="#" class="nav-toggle-btn" id="nav-toggle-btn">
+                    <i class="ri-eye-close-fill"></i></a>
             </div>
         </nav>
 
     </header>
+
     <!-- =====================End header ===========================-->
+    <!-- =========================START MAIN LANDING SECTION================== -->
+
+    <section class="show-case-section container-wrapper">
+        <div class="animated-text-wrapper " data-aos="fade-left">
+            <svg>
+                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                    welcome
+                </text>
+            </svg>
+        </div>
+
+
+    </section>
+    <section>
+        <h1 style="text-align: center; height: 30vh;" data-aos="fade-left">Welcome</h1>
+    </section>
+
+    <!-- =============================END MAIN LANDING SECTION==================== -->
+
     <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

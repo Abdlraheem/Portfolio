@@ -5,8 +5,6 @@ const navToggle = document.getElementById('nav-toggle-btn');
 const navClose = document.getElementById('nav-colse-btn');
 
 
-
-
 // MENU SHOW
 
 if (navToggle) {
