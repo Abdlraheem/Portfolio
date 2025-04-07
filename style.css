@@ -1,0 +1,331 @@
+/* MAIN COLORS THEME */
+:root  {
+    --dark-color: #141415;
+    --light-color: #957354;
+    --brown-skin-color: #7f432c;
+    --background-color: #000000;
+}
+
+/* boilerblate cleaning browser styles */
+
+
+*  {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+html  {
+    scroll-behavior: smooth;
+}
+
+
+a, li  {
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    background-color: var(--background-color);
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+  
+
+/* ------------START HEADER STYLES------------ */
+
+.header{
+    position: fixed;
+    width: 100%;
+    background: #141415;
+    background: linear-gradient(to top, #141415 0%, var(--brown-skin-color) 3%, var(--light-color) 100%);
+
+}
+
+.nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5.5rem;                              
+        padding: 0px 55px;
+        border: 1px solid;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+    
+}
+
+.logo{
+    display: inline-flex;
+  align-items: center;
+  top: 30px;
+    justify-content: center;
+    z-index: 1;
+    
+}
+.logo img{
+width: 100%;
+display: flex;
+
+
+}
+.nav-list  {
+    display: flex;
+    column-gap: 2rem;
+}
+.nav-close,
+.nav-toggle{
+    display: none;
+}
+
+/* -------------HOVER STATE ANIMATION---------------- */
+.nav-link:hover span{
+    margin-right: .4rem;
+    /* color: white; */
+    /* font-weight: 400; */
+    /* text-align: center; */
+    transition: .4s;
+   
+   
+    
+}
+.nav-link i {
+    opacity: 0;
+    visibility: hidden ;
+   
+}
+.nav-link:hover span::after{
+    width: 100%;
+   
+}
+
+
+.nav-social-link {
+    font-size: 20px;
+    transition: transform .4s;
+    
+}
+.nav-social-link:hover i {
+    background-color: var(--dark-color);
+    border-radius: 5px;
+    padding: 2px;
+    margin-right: .4rem;
+}
+
+
+
+/* ------------END HEADER STYLES------------ */
+
+
+/* -----------START LANDING SHOWCASE------------- */
+
+.landing-first  {
+    height: 100vh;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-color);
+}
+
+.landing-first h1 {
+    color: #ffffff;
+    text-align: center; 
+    flex: 2;
+    
+    
+}
+
+.animated-intro-text  {
+    animation: stroke 8s infinite alternate;
+    stroke-width: 2px;
+    stroke: #a09b36;
+    font-size: 200px;
+    font-weight: 600;
+}
+
+@keyframes stroke {
+	5%   {
+		fill: var(--brown-skin-color); stroke: var(--light-color);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 0.2;
+	}
+	/* 70%  {fill: var(--light-color); stroke: var(--dark-color); } */
+	50%  {fill: var(--light-color); stroke: var(--light-color); stroke-width: 0.2; }
+	100% {
+		fill: var(--dark-color); stroke: var(--brown-skin-color);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0.2;
+	}
+}
+/* ------------START LANDING SHOWCASE---------- */
+
+
+    /*-------- RESPONSIVE MEDIA QUERIES FOR MOBILE DEVICES ----------*/
+
+   @media only screen and (max-width: 1150px) {
+        .nav-menu{
+                    background-color: var(--brown-skin-color);
+                    
+                    left: -100%;
+                    top: 0;
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    padding: 13rem 3.5rem 4.5rem;
+                    justify-content: space-between;
+                    border: 3px solid white;
+                    transition: left .4s;
+                    flex-direction: column;
+                   
+            
+                }
+              
+                .logo{
+                        display: inline-flex;
+                      align-items: center;
+                      top: 30px;
+                        justify-content: center;
+                        z-index: 1;
+                        
+                }
+                .logo img{
+                    width: 100%;
+                   display: flex;
+                    
+
+                }
+                .nav-list,
+            .nav-social{
+                display: flex;
+            }
+            .nav-list{
+                flex-direction: column;
+                row-gap: 2rem;
+            }
+                        .nav-close,
+            .nav-toggle{
+                display: flex;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            .nav-link{
+                position: relative;
+                color: white;
+                font-size: 2rem;
+                display: inline-flex;
+                align-items: center;
+                transition: opacity .4s   ;
+                
+            }
+            .nav-link i{
+                font-size: 2rem;
+                /* font-weight: 100; */
+                position: absolute;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .4s, visibility .4s;
+            }
+            .nav-link span {
+                position: relative;
+                transition: margin .4s;
+              
+            }
+            .nav-link span::after {
+                content: '';
+                position: absolute;
+                background-color: var(--dark-color);
+                border-radius: 6px;
+                left: 0;
+                bottom: 0;
+                width: 0; 
+                height: 2px; 
+                display: inline;
+                transition: width .4s ease-out;
+    
+            }
+            .nav-item{
+                transform: translateX(-150px);
+                visibility: hidden;
+                transition: transform .4s ease-out, visibility .4s;
+            }
+            .nav-item:nth-child(1){
+                transition-delay: .1s;
+            }
+            .nav-item:nth-child(2){
+                transition-delay: .2s;
+            }
+            .nav-item:nth-child(3){
+                transition-delay: .3s;
+            }
+            .nav-item:nth-child(4){
+                transition-delay: .4s;
+            }
+              /* ANIMATION LINK ON HOVER STATE */
+                .nav-link:hover span{
+                    margin-left: 2.5rem;
+                    color: white;
+                    font-weight: 400;
+                    text-align: center;
+                   
+                    
+                }
+                .nav-link:hover i {
+                    opacity: 1;
+                    visibility: visible;
+                   
+                }
+                .nav-link:hover span::after{
+                    width: 100%;
+                   
+                }
+                /* SIBLING FADE ANIMATION */
+                .nav-list:has(.nav-link:hover) .nav-link:not(:hover){
+                    opacity: .4;
+                }
+                .nav-close{
+                    position: absolute;
+                    top: 2rem;
+                    right: 2rem;
+                }
+                .nav-social{
+                    column-gap: .5rem; 
+                    font-size: 2rem;
+                }
+                .nav-social-link {
+                    transition: transform .4s;
+                }
+                .nav-social-link:hover {
+                    transform: translateY(-.35rem);
+                    background-color: var(--dark-color);
+                    border-radius: 10px;
+                    padding:0px 2px ;
+                }
+                /* animation link when displaying menu */
+                .show-menu .nav-item{
+                    visibility: visible;
+                    transform: translateX(0);
+                }
+                .show-menu {
+                    left: 0;
+                }
+            }
+
+            
+    
+        
+      
+        
+
+            
+        
+
+            /* SHOW MENU */
+
+       
+        
