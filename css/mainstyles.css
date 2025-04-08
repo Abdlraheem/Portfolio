@@ -1,10 +1,11 @@
-/* ===============GLOBAL========== */
+/* ================================GLOBAL=============================== */
 
 :root {
     --dark-color: #141415;
     --light-color: #957354;
     --brown-skin-color: #7f432c;
     --background-color: #000000;
+    --main-color: #380036;
     --nav-height: 6rem;
 }
 
@@ -23,21 +24,27 @@ a {
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 200;
-    background: linear-gradient(to right, #0cbaba, #380036);
+    background: linear-gradient(to right, var(--dark-color), var(--main-color));
+    color: white;
+    line-height: 2.5rem;
 
 }
 
 .container-wrapper {
 
 
-    padding: 0 1rem;
-    width: 100vw;
+    padding: 0 12rem;
+    width: 100%;
 
 
 
 }
 
-/* ====================END GLOBAL================= */
+.text-align {
+    text-align: center;
+}
+
+/* ================================END GLOBAL============================ */
 
 
 .header {
@@ -46,6 +53,7 @@ body {
     position: sticky;
     width: 100%;
     height: var(--nav-height);
+    background: linear-gradient(to left, var(--dark-color), var(--main-color));
 }
 
 .whole-nav {
@@ -134,20 +142,131 @@ body {
 
 
 
-/* ===========ANIMATION HOVER STATE========= */
+/* ============================ANIMATION HOVER STATE==================== */
 
 
-/* -------------RESPONSIVE STATE-------------- */
 
 
-@media only screen and (max-width: 1150px) {
 
 
-    /* ===========ANIMATION HOVER STATE========= */
+/* ===========================START MAIN LANDING SECTION================= */
+
+.show-case-section {
+    height: calc(100vh - var(--nav-height));
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 
 }
 
+.left-side-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+/* =================================ANIMATIONS========================= */
+.animated-text-2 {
+    animation: fade 0.8s ease-in-out;
+}
+
+@keyframes fade {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.main-img img {
+    width: 26rem;
+
+}
+
+.details-action {
+    font-weight: 100;
+    animation: fade-left 0.8s ease-in-out;
+}
+
+@keyframes fade-left {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* ============================ANIMATED TEXT============================ */
+.animated-text {
+    text-align: center;
+    background: linear-gradient(to right,
+            white 20%,
+            var(--brown-skin-color) 30%,
+            var(--light-color) 70%,
+            #ffffff 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-fill-color: transparent; */
+    background-size: 500% auto;
+    animation: textShine 7s ease-in-out infinite alternate;
+    font-size: 3rem;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* =======END ANIMATED TEXT======= */
+
+
+
+/* ------================-------RESPONSIVE STATE-----===========-------- */
+
+
+@media only screen and (max-width: 1150px) {}
+
 /* Default: Extra-small devices such as small phones (less than 640px) */
+@media only screen and (max-width: 640px) {
+    .main-img img {
+        width: 17rem;
+    }
+
+    .left-side-content {
+        order: 1;
+    }
+
+    .show-case-section {
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .container-wrapper {
+        padding: 0 7rem;
+    }
+}
 
 /* Small devices such as large phones (640px and up) */
 
@@ -155,7 +274,22 @@ body {
 
 /* Medium devices such as tablets (768px and up) */
 @media only screen and (max-width: 768px) {
-    .show-case-section {}
+    .main-img img {
+        width: 23rem;
+    }
+
+
+    .show-case-section {
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .left-side-content {
+        order: 1;
+    }
+
+
 }
 
 /* Large devices such as laptops (1024px and up) */
@@ -164,8 +298,6 @@ body {
         padding: 1rem;
         gap: 1rem;
     }
-
-
 
     .nav-toggle-btn,
     .nav-colse-btn {
@@ -185,12 +317,22 @@ body {
         flex-direction: column;
         justify-content: center;
         gap: 2rem;
-        background: linear-gradient(to left, #0cbaba, #380036);
+        background: linear-gradient(to left, var(--dark-color), var(--light-color), var(--main-color));
         display: none;
         padding: 11rem 4rem;
-        /* z-index: 5; */
+        animation: gra 7s ease-in-out infinite alternate;
+        background-size: 500% auto;
 
+    }
 
+    @keyframes gra {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        100% {
+            background-position: 100% 50%;
+        }
     }
 
     .nav-list {
@@ -203,80 +345,25 @@ body {
         display: flex;
         /*SHOW/HIDE MENU */
 
+
     }
 
+    .show-case-section {
+        height: calc(100vh - var(--nav-height));
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+
+
+    }
 }
 
 /* Largest devices such as desktops (1280px and up) */
 @media only screen and (min-width: 1280px) {}
 
 /* ===============================END RESPONSIVE STATE================= */
-/* ================================START MAIN LANDING SECTION================= */
-
-.show-case-section {
-    height: calc(100vh - var(--nav-height));
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid red;
-
-}
-
-.main-img img {
-    width: 26rem;
-
-}
-
-.left-side-content {}
-
-@media only screen and (max-width: 640px) {
-    .main-img img {
-        width: 20rem;
-    }
-
-    .left-side-content {
-        order: 1;
-    }
-
-    .show-case-section {
-        flex-direction: column;
-
-    }
-}
-
-
-/* ======ANIMATED TEXT======= */
-.animated-text {
-    text-align: center;
-    background: linear-gradient(to right,
-            var(--light-color) 20%,
-            var(--brown-skin-color) 30%,
-            var(--dark-color) 70%,
-            #ffffff 80%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* text-fill-color: transparent; */
-    background-size: 500% auto;
-    animation: textShine 5s ease-in-out infinite alternate;
-    font-size: 5rem;
-}
-
-@keyframes textShine {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
-/* =======END ANIMATED TEXT======= */
-
-
 
 
 
