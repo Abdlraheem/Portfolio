@@ -161,6 +161,10 @@ body {
 
 }
 
+.personal-signatur {
+    order: 1;
+}
+
 .left-side-content {
     display: flex;
     flex-direction: column;
@@ -240,6 +244,55 @@ body {
 
 /* =======END ANIMATED TEXT======= */
 
+
+
+svg {
+
+    width: 100%;
+    height: 100%;
+}
+
+svg path {
+    animation: stroke 5s alternate;
+    stroke-width: 2;
+    stroke: #ffffff;
+    font-size: 100px;
+}
+
+@keyframes stroke {
+    0% {
+        /* fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1); */
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+
+    70% {
+        /* fill: rgba(72, 138, 204, 0); */
+        stroke: rgb(255, 255, 255);
+    }
+
+    80% {
+        /* fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1); */
+        stroke-width: 3;
+    }
+
+    100% {
+        /* fill: rgba(72, 138, 204, 1); */
+        stroke: rgba(255, 255, 255, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+}
+
+.wrapper {
+    background-color: #FFFFFF
+}
+
+;
 
 
 /* ------================-------RESPONSIVE STATE-----===========-------- */
