@@ -38,9 +38,6 @@ main.addEventListener("mousemove", function (moves) {
     gsap.to(cursor, {
         x: moves.x,
         y: moves.y,
-
-
-
         position: "fixed"
 
 
