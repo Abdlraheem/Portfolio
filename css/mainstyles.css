@@ -15,6 +15,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 li,
 a {
     text-decoration: none;
@@ -30,11 +34,20 @@ body {
 
 }
 
+body {
+    height: 1000px;
+    /* Height to allow scrolling */
+}
+
+
+
 .container-wrapper {
 
 
     padding: 0 12rem;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+
 
 
 
@@ -42,6 +55,21 @@ body {
 
 .text-align {
     text-align: center;
+}
+
+#cursor {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    opacity: 60%;
+
+}
+
+.main-container {
+    height: 2000px;
 }
 
 /* ================================END GLOBAL============================ */
@@ -100,6 +128,12 @@ body {
 
 }
 
+.nav-list a {
+    color: white;
+
+
+}
+
 
 .nav-social-links {
     display: flex;
@@ -140,7 +174,7 @@ body {
 
 }
 
-
+/* ============================END HEADER================ */
 
 /* ============================ANIMATION HOVER STATE==================== */
 
@@ -162,18 +196,14 @@ body {
 }
 
 .personal-signatur {
-    order: 1;
+    order: -1;
+    flex-shrink: 10;
 }
 
 .left-side-content {
     display: flex;
     flex-direction: column;
 }
-
-
-
-
-
 
 
 
@@ -242,18 +272,19 @@ body {
     }
 }
 
-/* =======END ANIMATED TEXT======= */
+/* ================END ANIMATED TEXT================ */
 
 
-
-svg {
+/* ==============================Signature================== */
+svg .personal-signatur {
 
     width: 100%;
     height: 100%;
+
 }
 
-svg path {
-    animation: stroke 5s alternate;
+.personal-signatur-path {
+    animation: stroke 3s alternate;
     stroke-width: 2;
     stroke: #ffffff;
     font-size: 100px;
@@ -263,8 +294,8 @@ svg path {
     0% {
         /* fill: rgba(72, 138, 204, 0);
         stroke: rgba(54, 95, 160, 1); */
-        stroke-dashoffset: 25%;
-        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 1%;
+        stroke-dasharray: 10% 150%;
         stroke-width: 2;
     }
 
@@ -282,9 +313,9 @@ svg path {
     100% {
         /* fill: rgba(72, 138, 204, 1); */
         stroke: rgba(255, 255, 255, 0);
-        stroke-dashoffset: -25%;
-        stroke-dasharray: 50% 0;
-        stroke-width: 0;
+        stroke-dashoffset: 70%;
+        stroke-dasharray: 1% 100%;
+        stroke-width: 0.5;
     }
 }
 
@@ -319,6 +350,8 @@ svg path {
     .container-wrapper {
         padding: 0 7rem;
     }
+
+
 }
 
 /* Small devices such as large phones (640px and up) */
@@ -342,7 +375,12 @@ svg path {
         order: 1;
     }
 
-
+    .personal-signatur {
+        position: absolute;
+        width: 21%;
+        left: 68%;
+        top: 17%;
+    }
 }
 
 /* Large devices such as laptops (1024px and up) */
@@ -373,7 +411,7 @@ svg path {
         background: linear-gradient(to left, var(--dark-color), var(--light-color), var(--main-color));
         display: none;
         padding: 11rem 4rem;
-        animation: gra 7s ease-in-out infinite alternate;
+        animation: gra 3s ease-in-out infinite alternate;
         background-size: 500% auto;
 
     }
@@ -411,6 +449,15 @@ svg path {
 
 
     }
+
+    .personal-signatur {
+        position: absolute;
+        width: 21%;
+        left: 68%;
+        top: 40%;
+        z-index: 1;
+        rotate: 30deg;
+    }
 }
 
 /* Largest devices such as desktops (1280px and up) */
@@ -419,5 +466,48 @@ svg path {
 /* ===============================END RESPONSIVE STATE================= */
 
 
+/* action button */
+.action-button {
+    display: inline;
+    width: fit-content;
+    align-self: center;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+
+    background-color: var(--dark-color);
+    color: white;
+    border: 0.2px solid white;
+    box-shadow: 0 10px 20px -8px rgba(215, 215, 215, 0.7);
+    text-transform: uppercase;
+
+}
+
+/* ========action button hover effect======= */
+.action-button:hover {
+    background: linear-gradient(var(--main-color) 20%, var(--dark-color) 90%);
+    color: white;
+    filter: brightness(150%);
+    box-shadow: none;
+    transform: scale(20px);
+    transition: 0.3s ease-in-out;
+
+}
+
+
+
 
 /* ====================================END MAIN LANDING SECTION================= */
+
+/* ====================================CV SECTION============================== */
+.cv {
+    font-size: 5rem;
+    padding: 90px 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.cv svg {}
