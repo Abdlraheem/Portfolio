@@ -536,3 +536,18 @@ svg .personal-signatur {
 
 
 }
+.texttt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title-contact {
+    cursor: pointer;
+}
+.title-contact-underline {
+    background-color: white;
+    width: 130px;
+    height: 1px;
+    text-align: center;
+}
