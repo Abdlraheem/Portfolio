@@ -7,6 +7,7 @@
     --background-color: #000000;
     --main-color: #380036;
     --nav-height: 6rem;
+    --normal-font-weight: 100;
 }
 
 * {
@@ -27,7 +28,7 @@ a {
 
 body {
     font-family: "Poppins", sans-serif;
-    font-weight: 200;
+    font-weight: 100;
     background: linear-gradient(to right, var(--dark-color), var(--main-color));
     color: white;
     line-height: 2.5rem;
@@ -68,9 +69,14 @@ body {
 
 }
 
-.main-container {
-    height: 2000px;
+
+
+.title {
+    font-weight: 200;
+    font-size: 70px;
+    margin-top: 20px;
 }
+
 
 /* ================================END GLOBAL============================ */
 
@@ -82,7 +88,7 @@ body {
     width: 100%;
     height: var(--nav-height);
     background: linear-gradient(to left, var(--dark-color), var(--main-color));
-    z-index: 10;
+    z-index: 12;
 }
 
 .whole-nav {
@@ -186,6 +192,10 @@ body {
 
 
 /* ===========================START MAIN LANDING SECTION================= */
+.main-img img {
+    width: 26rem;
+
+}
 .first-section {
     justify-content: center;
     height: 100vh;
@@ -215,10 +225,60 @@ body {
     align-items: center;
     justify-content: center;
 }
+.left-side-content p {
+    line-height: 20px;
+}
+.descriptions-intro {
+    margin-top: 1rem;
+}
+/* action button */
+ .action-button {
+    display: inline;
+    width: fit-content;
+    align-self: center;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--dark-color);
+    color: rgb(255, 255, 255);
+    border: 0.2px solid white;
+    box-shadow: 0 10px 20px -8px rgba(215, 215, 215, 0.7);
+    text-transform: uppercase;
+    z-index: 11;
+    margin-top: 1rem;
+
+}
+/* ========action button hover effect======= */
+.action-button:hover {
+    background: linear-gradient(var(--main-color) 20%, var(--dark-color) 90%);
+    color: white;
+    filter: brightness(150%);
+    box-shadow: none;
+    transform: scale(20px);
+    transition: 0.3s ease-in-out;
+    
+
+}
 
 
 
 /* =================================ANIMATIONS========================= */
+.auto-show {
+    animation: autoShowAnimation both;
+    animation-timeline: view(5% 5%);
+
+}
+@keyframes autoShowAnimation {
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.1);
+    }to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
 .animated-text-2 {
     animation: fade 0.8s ease-in-out;
 }
@@ -234,14 +294,12 @@ body {
     }
 }
 
-.main-img img {
-    width: 26rem;
 
-}
 
 .details-action {
     font-weight: 100;
     animation: fade-left 0.8s ease-in-out;
+    line-height: 28px;
 }
 
 @keyframes fade-left {
@@ -330,11 +388,8 @@ svg .personal-signatur {
     }
 }
 
-.wrapper {
-    background-color: #FFFFFF
-}
 
-;
+
 
 
 /* ------================-------RESPONSIVE STATE-----===========-------- */
@@ -372,6 +427,7 @@ svg .personal-signatur {
         left: 68%;
         top: 17%;
     }
+ 
 }
 
 /* Large devices such as laptops (1024px and up) */
@@ -472,7 +528,7 @@ svg .personal-signatur {
     }
 
     .container-wrapper {
-        padding: 0 7rem;
+        padding: 0 1rem;
     }
 
     .nav-list {
@@ -492,62 +548,106 @@ svg .personal-signatur {
 /* ===============================END RESPONSIVE STATE================= */
 
 
-/* action button */
-.action-button {
-    display: inline;
-    width: fit-content;
-    align-self: center;
-    padding: 7px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-
-    background-color: var(--dark-color);
-    color: white;
-    border: 0.2px solid white;
-    box-shadow: 0 10px 20px -8px rgba(215, 215, 215, 0.7);
-    text-transform: uppercase;
-
-}
-
-/* ========action button hover effect======= */
-.action-button:hover {
-    background: linear-gradient(var(--main-color) 20%, var(--dark-color) 90%);
-    color: white;
-    filter: brightness(150%);
-    box-shadow: none;
-    transform: scale(20px);
-    transition: 0.3s ease-in-out;
-
-}
 
 
 
 
+  
+  /* .astrodivider span {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: -25px;
+    left: 50%;
+    margin-left: -25px;
+    border-radius: 100%;
+    box-shadow: 0 2px 4px #4fb39c; 
+    background: #fff;
+  }
+  .astrodivider i {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    border-radius: 100%;
+    border: 1px dashed #68beaa; 
+    text-align: center;
+    line-height: 40px;
+    font-style: normal;
+    color: #049372; 
+  } */
 /* ====================================END MAIN LANDING SECTION================= */
 
 /* ====================================CV SECTION============================== */
+
 .cv {
-    font-size: 5rem;
-    padding: 90px 0;
+   font-weight: 100;
+   padding: 96px 0;
     display: flex;
     flex-direction: column;
+    
+
+}
 
 
+.astrodivider {
+    margin: 0px auto;
+    width: 80%;
+    max-width: 100%;
+    position: relative;
+  }
+  .astrodividermask {
+    overflow: hidden;
+    height: 10px;
+  }
+  
+  .astrodividermask:after {
+    content: "";
+    display: block;
+    margin: -25px auto 0;
+    width: 100%;
+    height: 25px;
+    border-radius: 125px / 12px;
+    box-shadow: 0 0 10px white;
+    
+  }
+  .stars {
+    position: absolute;
+    top: 14%;
+    left: 0;
+    animation: stars 3s infinite alternate;
+    stroke-width: 0.11;
+    stroke: #ffffff;
+    fill: none;
+    z-index: 10;
+    position: fixed;
+    
 }
-.texttt{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.title-contact {
-    cursor: pointer;
-}
-.title-contact-underline {
-    background-color: white;
-    width: 130px;
-    height: 1px;
-    text-align: center;
+@keyframes stars {
+    0% {
+        stroke-dashoffset: 1%;
+        stroke-dasharray: 10% 150%;
+        stroke-width: 0.8;
+    }
+
+    70% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgb(255, 255, 255);
+    }
+
+    80% {
+        /* fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1); */
+        stroke-width: 2;
+    }
+
+    100% {
+        fill: rgb(255, 255, 255);
+        stroke: rgba(255, 255, 255, 0);
+        stroke-dashoffset: 70%;
+        stroke-dasharray: 1% 100%;
+        stroke-width: 2;
+    }
 }
