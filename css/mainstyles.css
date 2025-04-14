@@ -64,7 +64,7 @@ body {
     background-color: white;
     border-radius: 50%;
     position: absolute;
-    z-index: 2;
+    z-index: 13;
     opacity: 60%;
 
 }
