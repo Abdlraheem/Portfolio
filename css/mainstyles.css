@@ -43,14 +43,9 @@ body {
 
 
 .container-wrapper {
-
-
     padding: 0px 3rem;
     width: 100vw;
     height: 100vh;
-
-
-
 
 }
 
@@ -138,6 +133,7 @@ body {
 
 .nav-list a {
     color: white;
+    font-weight: 400;
 
 
 }
@@ -232,7 +228,7 @@ body {
     margin-top: 1rem;
 }
 /* action button */
- .action-button {
+.action-button {
     display: inline;
     width: fit-content;
     align-self: center;
@@ -258,8 +254,6 @@ body {
     box-shadow: none;
     transform: scale(20px);
     transition: 0.3s ease-in-out;
-    
-
 }
 
 
@@ -461,10 +455,6 @@ svg .personal-signatur {
         animation: gra 3s ease-in-out infinite alternate;
         background-size: 500% auto;
         border-bottom-left-radius: 200px;
-
-
-
-
     }
 
     @keyframes gra {
@@ -497,9 +487,6 @@ svg .personal-signatur {
         display: flex;
         justify-content: center;
         align-items: center;
-
-
-
     }
 
     .personal-signatur {
@@ -535,11 +522,7 @@ svg .personal-signatur {
         flex-direction: column;
         gap: 1rem;
         align-items: baseline;
-
     }
-
-
-
 }
 
 /* Largest devices such as desktops (1280px and up) */
@@ -547,38 +530,9 @@ svg .personal-signatur {
 
 /* ===============================END RESPONSIVE STATE================= */
 
-
-
-
-
-
-  
-  /* .astrodivider span {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    bottom: 100%;
-    margin-bottom: -25px;
-    left: 50%;
-    margin-left: -25px;
-    border-radius: 100%;
-    box-shadow: 0 2px 4px #4fb39c; 
-    background: #fff;
-  }
-  .astrodivider i {
-    position: absolute;
-    top: 4px;
-    bottom: 4px;
-    left: 4px;
-    right: 4px;
-    border-radius: 100%;
-    border: 1px dashed #68beaa; 
-    text-align: center;
-    line-height: 40px;
-    font-style: normal;
-    color: #049372; 
-  } */
 /* ====================================END MAIN LANDING SECTION================= */
+
+
 
 /* ====================================CV SECTION============================== */
 
@@ -587,10 +541,14 @@ svg .personal-signatur {
    padding: 96px 0;
     display: flex;
     flex-direction: column;
-    
-
 }
+/* ======================TYPE AUTO=================== */
+#typedtext {
+    margin:20px 0;
 
+    line-height: 20px;
+}
+/*================== divider============== */
 
 .astrodivider {
     margin: 0px auto;
@@ -613,6 +571,8 @@ svg .personal-signatur {
     box-shadow: 0 0 10px white;
     
   }
+
+  /*======================= STARS ================== */
   .stars {
     position: absolute;
     top: 14%;
@@ -651,3 +611,49 @@ svg .personal-signatur {
         stroke-width: 2;
     }
 }
+
+/*=============== FAIRY FLYES =====================*/
+
+.particle-container {
+    position:absolute;
+    top:0; left:8%; bottom:0;
+    width:55%;
+    /* mix-blend-mode: soft-light; */
+    --timescale:0.5s;
+  }
+  .pt {
+    display:block;
+    position:absolute;
+    left:calc( var(--x) * 1%);
+    top:calc( var(--y) * 1% );
+    height:50px; 
+    /* border:dotted thin rgb(255, 255, 255); */
+    animation: moveUpDown calc( var(--timescale) * var(--yt) ) infinite cubic-bezier(.45,.05,.55,.95) alternate;
+    animation-delay:calc( -1s * var(--d, 0) );
+  }
+  .pt b{
+    display:block;
+    background:url(https://res.cloudinary.com/monson-productions/image/upload/v1645640126/glowey_yfdvor.png);
+    background-size:contain;
+    /* border:dotted thin green; */
+    width: calc( 0.1vw * var(--w) );
+    height:calc( 0.1vw * var(--w) );
+    position:absolute;
+    opacity:var(--o, 1);
+    animation: moveRightLeft calc( var(--timescale) * var(--xt) ) infinite cubic-bezier(.45,.05,.55,.95) alternate , flicker calc( 2s * var(--xd) ) infinite alternate  cubic-bezier(.45,.05,.55,.95);
+    animation-delay:calc( -1s * var(--d, 0) ) , calc( -0.2s * var(--d, 0) );
+  }
+  @keyframes moveUpDown {
+    0% {}
+    100% {transform:translateY( calc(50% * var(--yd, 3))  ); } 
+  }
+  @keyframes moveRightLeft {
+    0% { transform:translateX(  calc(-50% * var(--xd, 3))  );}
+    100% {transform:translateX(  calc(50% * var(--xd, 3))  ); }
+  }
+  @keyframes flicker{
+    0% { opacity:calc( var(--o, 1) - 0.1); }
+    100% { opacity:calc( var(--o, 1) + 0.1); }
+  }
+    
+  

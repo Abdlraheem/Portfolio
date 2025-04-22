@@ -12,11 +12,6 @@ var finpath = `M 10 100 Q 500 100 990 100`;
 
 
 
-
-
-
-
-
 //  CURSOR MOVING CIRCLE
 main.addEventListener("mousemove", function (moves) {
     gsap.to(cursor, {
@@ -24,10 +19,8 @@ main.addEventListener("mousemove", function (moves) {
         y: moves.y,
         position: "fixed"
 
-
     })
 })
-
 
 
 
@@ -59,6 +52,7 @@ const ani = function () {
     })
 }
 document.onload = ani();
+
 
 
 //   stars animation
@@ -117,59 +111,16 @@ document.onload = ani();
 
 
 
-
-
-
-
-// var string = document.querySelector(".cv");
-// string.addEventListener("mousemove", function (dets) {
-//     path = `M 10 100 Q 500 ${dets.y} 990 100`;
-//     gsap.to(".cv svg path", {
-//         attr: { d: path },
-//         duration: 0.2,
-//         ease: "power3.out"
-//     })
-
-
-// })
-// string.addEventListener("mouseleave", function () {
-
-//     gsap.to(".cv svg path", {
-//         attr: { d: finpath },
-//         duration: 0.3,
-//         ease: "elastic.out(1,0.2"
-
-//     })
-
-// })
-
-
-
-// ======================================================
-
-gsap.from("#cv-title ", {
-    x: -800,
-    opacity: 0,
-    scale:0,
-    scrollTrigger: {
-        trigger: "#cv-title",
-        scroller: "body",
-        start: "top 85%",
-        end: "top 20%",
-        scrub:2
-    }
-})
-
-
 // MENU SHOW
 
 if (navToggle) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu')
         ani()
-
     })
 };
+
+
 
 // MENU HIDDEN
 
@@ -180,3 +131,55 @@ if (navClose) {
 };
 
 
+
+// set up text to print, each item in array is new line
+var aText = new Array(
+    "<b>From</b> concept development <br><b>to</b> the final execution, develop web products by coding wireframes into elements that users can interact with.", 
+    "I believe that<b> great design</b> not only captures attention but also drives meaningful connections and speaks louder than words."
+    );
+    var iSpeed = 150; // time delay of print out
+    var iIndex = 0; // start printing array at this posision
+    var iArrLength = aText[0].length; // the length of the text array
+    var iScrollAt = 20; // start scrolling up at this many lines
+    
+    var iTextPos = 0; // initialise text position
+    var sContents = ''; // initialise contents variable
+    var iRow; // initialise current row
+        
+        function typewriter()
+        {
+        sContents =  ' ';
+        iRow = Math.max(0, iIndex-iScrollAt);
+        var destination = document.getElementById("typedtext");
+        
+        while ( iRow < iIndex ) {
+        sContents += aText[iRow++] + '<br />';
+        }
+        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + " |";
+        if ( iTextPos++ == iArrLength ) {
+        iTextPos = 0;
+        iIndex++;
+        if ( iIndex != aText.length ) {
+        iArrLength = aText[iIndex].length;
+        setTimeout("typewriter()", 500);
+        }
+        } else {
+        setTimeout("typewriter()", iSpeed);
+        }
+    }
+    
+    gsap.from("#typedtext", {
+        
+            opacity: 0,
+        y:30,
+        scrollTrigger: {
+            trigger: "#typedtext",
+            scroller: "body",
+            start: "top 85%",
+            end: "top 50%",
+            scrub:2,
+            // markers: true
+        }
+
+    })
+    typewriter();
