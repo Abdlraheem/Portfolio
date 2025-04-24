@@ -183,3 +183,21 @@ var aText = new Array(
 
     })
     typewriter();
+
+
+    gsap.from("#education-journey", {
+        y: 100,
+        opacity:0,
+        scrollTrigger: {
+            trigger: "#education-journey",
+            scroller: "body",
+            start: "top 85%",
+            end: "top 50%",
+            scrup:2,
+            // markers:true,
+            stagger: 0,
+
+        }
+
+    })
+   

@@ -32,21 +32,16 @@ body {
     background: linear-gradient(to right, var(--dark-color), var(--main-color));
     color: white;
     line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
 
-}
-
-body {
-    height: 1000px;
-    /* Height to allow scrolling */
 }
 
 
 
 .container-wrapper {
-    padding: 0px 3rem;
-    width: 100vw;
-    height: 100vh;
-
+    padding: 0px 14rem;
+    width: 100%;
 }
 
 .text-align {
@@ -129,11 +124,13 @@ body {
     gap: 3rem;
 
 
+
 }
 
 .nav-list a {
     color: white;
     font-weight: 400;
+    text-transform: uppercase;
 
 
 }
@@ -339,18 +336,14 @@ body {
 
 
 /* ==============================Signature================== */
-svg .personal-signatur {
 
-    width: 100%;
-    height: 100%;
-
-}
 
 .personal-signatur-path {
     animation: stroke 3s alternate;
     stroke-width: 2;
     stroke: #ffffff;
     font-size: 100px;
+   
 }
 
 @keyframes stroke {
@@ -415,13 +408,6 @@ svg .personal-signatur {
         order: 1;
     }
 
-    .personal-signatur {
-        position: absolute;
-        width: 21%;
-        left: 68%;
-        top: 17%;
-    }
- 
 }
 
 /* Large devices such as laptops (1024px and up) */
@@ -489,14 +475,7 @@ svg .personal-signatur {
         align-items: center;
     }
 
-    .personal-signatur {
-        position: absolute;
-        width: 21%;
-        left: 68%;
-        top: 40%;
-        z-index: 1;
-        rotate: 30deg;
-    }
+    
 }
 
 @media only screen and (max-width: 640px) {
@@ -534,34 +513,33 @@ svg .personal-signatur {
 
 
 
-/* ====================================CV SECTION============================== */
+/* start second section about me */
 
-.cv {
-   font-weight: 100;
-   padding: 96px 0;
-    display: flex;
-    flex-direction: column;
+
+
+.second-section {
+    width: 100%;
 }
 /* ======================TYPE AUTO=================== */
-#typedtext {
-    margin:20px 0;
-
-    line-height: 20px;
-}
+    #typedtext {
+        margin:20px 0;
+        line-height: 20px;
+    }
+     /* ====================================END AUTO TYPE  SECTION============================== */
 /*================== divider============== */
 
-.astrodivider {
+.divider {
     margin: 0px auto;
     width: 80%;
     max-width: 100%;
     position: relative;
-  }
-  .astrodividermask {
+}
+.dividermask {
     overflow: hidden;
     height: 10px;
-  }
-  
-  .astrodividermask:after {
+    }
+    
+    .dividermask:after {
     content: "";
     display: block;
     margin: -25px auto 0;
@@ -569,48 +547,26 @@ svg .personal-signatur {
     height: 25px;
     border-radius: 125px / 12px;
     box-shadow: 0 0 10px white;
-    
-  }
+        
+    }
+    #title {
+        text-align:start;
+    }
+  
+    #about {
+        margin-top: 2rem;
+        text-align: start;
+        font-size: 1.5rem;
+    }
+    #about p {
+        margin-top: 1rem;
 
-  /*======================= STARS ================== */
-  .stars {
-    position: absolute;
-    top: 14%;
-    left: 0;
-    animation: stars 3s infinite alternate;
-    stroke-width: 0.11;
-    stroke: #ffffff;
-    fill: none;
-    z-index: 10;
-    position: fixed;
-    
-}
-@keyframes stars {
-    0% {
-        stroke-dashoffset: 1%;
-        stroke-dasharray: 10% 150%;
-        stroke-width: 0.8;
     }
 
-    70% {
-        fill: rgba(72, 138, 204, 0);
-        stroke: rgb(255, 255, 255);
-    }
 
-    80% {
-        /* fill: rgba(72, 138, 204, 0);
-        stroke: rgba(54, 95, 160, 1); */
-        stroke-width: 2;
-    }
+/* end second section about me */
 
-    100% {
-        fill: rgb(255, 255, 255);
-        stroke: rgba(255, 255, 255, 0);
-        stroke-dashoffset: 70%;
-        stroke-dasharray: 1% 100%;
-        stroke-width: 2;
-    }
-}
+
 
 /*=============== FAIRY FLYES =====================*/
 
@@ -620,8 +576,8 @@ svg .personal-signatur {
     width:55%;
     /* mix-blend-mode: soft-light; */
     --timescale:0.5s;
-  }
-  .pt {
+    }
+    .pt {
     display:block;
     position:absolute;
     left:calc( var(--x) * 1%);
@@ -630,30 +586,34 @@ svg .personal-signatur {
     /* border:dotted thin rgb(255, 255, 255); */
     animation: moveUpDown calc( var(--timescale) * var(--yt) ) infinite cubic-bezier(.45,.05,.55,.95) alternate;
     animation-delay:calc( -1s * var(--d, 0) );
-  }
-  .pt b{
-    display:block;
-    background:url(https://res.cloudinary.com/monson-productions/image/upload/v1645640126/glowey_yfdvor.png);
-    background-size:contain;
-    /* border:dotted thin green; */
-    width: calc( 0.1vw * var(--w) );
-    height:calc( 0.1vw * var(--w) );
-    position:absolute;
-    opacity:var(--o, 1);
-    animation: moveRightLeft calc( var(--timescale) * var(--xt) ) infinite cubic-bezier(.45,.05,.55,.95) alternate , flicker calc( 2s * var(--xd) ) infinite alternate  cubic-bezier(.45,.05,.55,.95);
-    animation-delay:calc( -1s * var(--d, 0) ) , calc( -0.2s * var(--d, 0) );
-  }
-  @keyframes moveUpDown {
-    0% {}
-    100% {transform:translateY( calc(50% * var(--yd, 3))  ); } 
-  }
-  @keyframes moveRightLeft {
-    0% { transform:translateX(  calc(-50% * var(--xd, 3))  );}
-    100% {transform:translateX(  calc(50% * var(--xd, 3))  ); }
-  }
-  @keyframes flicker{
-    0% { opacity:calc( var(--o, 1) - 0.1); }
-    100% { opacity:calc( var(--o, 1) + 0.1); }
-  }
-    
-  
+    }
+    .pt b{
+        display:block;
+        background:url(https://res.cloudinary.com/monson-productions/image/upload/v1645640126/glowey_yfdvor.png);
+        background-size:contain;
+        /* border:dotted thin green; */
+        width: calc( 0.1vw * var(--w) );
+        height:calc( 0.1vw * var(--w) );
+        position:absolute;
+        opacity:var(--o, 1);
+        animation: moveRightLeft calc( var(--timescale) * var(--xt) ) infinite cubic-bezier(.45,.05,.55,.95) alternate , flicker calc( 2s * var(--xd) ) infinite alternate  cubic-bezier(.45,.05,.55,.95);
+        animation-delay:calc( -1s * var(--d, 0) ) , calc( -0.2s * var(--d, 0) );
+    }
+    @keyframes moveUpDown {
+        0% {}
+        100% {transform:translateY( calc(50% * var(--yd, 3))  ); } 
+    }
+    @keyframes moveRightLeft {
+        0% { transform:translateX(  calc(-50% * var(--xd, 3))  );}
+        100% {transform:translateX(  calc(50% * var(--xd, 3))  ); }
+    }
+    @keyframes flicker{
+        0% { opacity:calc( var(--o, 1) - 0.1); }
+        100% { opacity:calc( var(--o, 1) + 0.1); }
+    }
+
+
+
+
+
+
