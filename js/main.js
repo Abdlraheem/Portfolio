@@ -55,59 +55,6 @@ document.onload = ani();
 
 
 
-//   stars animation
-
-    gsap.to(".star" ,{
-        x:1400,
-        y:1000,
-        scale:0.1,
-        opacity: 0,
-        duration: 10,
-        delay:0.2
-    })
-    gsap.to(".star2" ,{
-        x:1800,
-        y:300,
-        scale:0.1,
-        opacity: 0,
-        delay:0.5,
-        duration: 8})
-    gsap.to(".star3" ,{
-        x:1600,
-        y:200,
-        scale:0.1,
-        opacity: 0,
-        delay:1,
-        duration: 8})
-    gsap.to(".star4" ,{
-        x:1600,
-        y:300,
-        scale:0.1,
-        opacity: 0,
-        delay:0.1,
-        duration: 8})
-    gsap.to(".star5" ,{
-        x:1800,
-        y:400,
-        scale:0.1,
-        opacity: 0,
-        delay:1.5,
-        duration: 8})
-    gsap.to(".star6" ,{
-        x:1900,
-        y:200,
-        scale:0.1,
-        opacity: 0,
-        delay:1.5,
-        duration: 8})
-    
-    gsap.to(".star7" ,{
-        x:2000,
-        y:200,
-        scale:0.1,
-        opacity: 0,
-        delay:1.5,
-        duration: 8})
 
 
 
@@ -185,19 +132,16 @@ var aText = new Array(
     typewriter();
 
 
-    gsap.from("#education-journey", {
-        y: 100,
-        opacity:0,
-        scrollTrigger: {
-            trigger: "#education-journey",
-            scroller: "body",
-            start: "top 85%",
-            end: "top 50%",
-            scrup:2,
-            // markers:true,
-            stagger: 0,
-
-        }
-
-    })
    
+    // ABOUT SECTION
+    gsap.from("#about",{
+        opacity: 0,
+        y:100,
+        scrollTrigger:{
+            trigger:"#about",
+            start: "top 90%",
+            end: "top 13%",
+            markers: true,
+            scrub:2
+        }
+    })

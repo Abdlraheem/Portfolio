@@ -185,8 +185,9 @@ body {
 
 
 /* ===========================START MAIN LANDING SECTION================= */
-.main-img img {
-    width: 26rem;
+.main-img  {
+    width: 50%;
+    height: min-content;
 
 }
 .first-section {
@@ -516,9 +517,16 @@ body {
 /* start second section about me */
 
 
-
+.about-me {
+ display: flex;
+ align-items: center;
+}
 .second-section {
     width: 100%;
+}
+
+#about{
+   
 }
 /* ======================TYPE AUTO=================== */
     #typedtext {
